@@ -1,0 +1,70 @@
+body {
+  background-color: #C4C4C4;
+}
+
+.top-view {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  background-color: #393939;
+  color: #FFFFFF;
+}
+.top-view > div {
+  width: 80%;
+  margin: auto;
+}
+.top-view ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style-type: none;
+}
+.top-view img {
+  height: 80px;
+  position: relative;
+  top: 0;
+}
+.top-view .header {
+  width: 30%;
+}
+.top-view .navigator {
+  width: 50%;
+}
+.top-view div, .top-view img {
+  display: inline-block;
+}
+.top-view li {
+  width: 20%;
+}
+.top-view li div {
+  display: block;
+  width: 160px;
+}
+.top-view li ul {
+  display: none;
+}
+.top-view li li {
+  display: block;
+}
+.top-view li:hover span {
+  border-bottom-style: solid;
+  border-width: 1px;
+}
+.top-view li:hover ul {
+  display: block;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+}
