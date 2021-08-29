@@ -2,6 +2,11 @@ body {
   background-color: #C4C4C4;
 }
 
+section div {
+  width: 80%;
+  margin: auto;
+}
+
 .top-view {
   position: relative;
   width: 100%;
