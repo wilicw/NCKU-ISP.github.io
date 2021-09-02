@@ -10,10 +10,12 @@ var md = window.markdownit();
         'title_filter2': /##\s.+\r\n/,
     }
 
-    function set_tab_display(content_tag, id) {
+    function set_tab_display(intro_tag, content_tag, id) {
         var count = $(content_tag).children('div').length
         for (i = 0; i < count; i++) {
             $(content_tag + ' #tab-' + i).css('display', (i == id) ? 'block' : 'none')
+            if (i == id) $(intro_tag + ' #tab-button-' + i).addClass('active')
+            else $(intro_tag + ' #tab-button-' + i).removeClass('active')
         }
     }
 
@@ -33,7 +35,8 @@ var md = window.markdownit();
                 tab_btn_container = intro_tag + ' div'
                 $(tab_btn_container).append(
                     $('<button class="tab-links"></button>')
-                        .on('click', function () { set_tab_display(content_tag, idx - 1) })
+                        .on('click', function () { set_tab_display(intro_tag, content_tag, idx - 1) })
+                        .attr('id', 'tab-button-' + (idx - 1))
                         .text(title)
                 )
                 $(content_tag).append(
@@ -45,7 +48,7 @@ var md = window.markdownit();
         })
 
         // set default to display
-        set_tab_display(content_tag, 0)
+        set_tab_display(intro_tag, content_tag, 0)
     }
 
     function content_render(content, selector) {
