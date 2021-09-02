@@ -24,16 +24,6 @@ section div {
   width: 80%;
   margin: auto;
 }
-.top-view ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  list-style-type: none;
-}
 .top-view img {
   height: 80px;
   position: relative;
@@ -45,28 +35,52 @@ section div {
 .top-view .navigator {
   width: 50%;
 }
-.top-view div, .top-view img {
-  display: inline-block;
+.top-view .navigator a, .top-view .navigator a:hover, .top-view .navigator a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
 }
-.top-view li {
+.top-view .navigator ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style-type: none;
+}
+.top-view .navigator ul li {
+  position: relative;
   width: 20%;
 }
-.top-view li div {
+.top-view .navigator ul li div {
   display: block;
-  width: 160px;
+  width: 200px;
 }
-.top-view li ul {
+.top-view .navigator ul li ul {
   display: none;
+  position: relative;
+  list-style-type: circle;
 }
-.top-view li li {
-  display: block;
+.top-view .navigator ul li ul li {
+  border-style: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.top-view li:hover span {
+.top-view .navigator ul li ul li:hover {
+  border-style: solid;
+  border-width: 1px;
+}
+.top-view .navigator ul li:hover a {
   border-bottom-style: solid;
   border-width: 1px;
 }
-.top-view li:hover ul {
+.top-view .navigator ul li:hover ul {
   display: block;
+}
+.top-view div, .top-view img {
+  display: inline-block;
 }
 
 footer p {

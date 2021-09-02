@@ -6,6 +6,7 @@ var md = window.markdownit();
         'section': /----\r\n/,
         'identifier1': /#\s\S+\s/,
         'identifier2': /##\s\S+\s/,
+        'identifier3': /###\s\S+\s/,
         'title_filter1': /#\s\S+\r\n/,
         'title_filter2': /##\s.+\r\n/,
     }
@@ -55,8 +56,41 @@ var md = window.markdownit();
         $(selector).append(md.render(content))
     }
 
+    function navigator_generator(nav_tag, content) {
+        btn_title = content.match(md_rule['identifier1'])[0].slice(2, -1);
+        var sub_btn = $('<ul></ul>')
+
+        sub_content = content.split(md_rule['section'])
+        sub_content.forEach((sub) => {
+            console.log(sub)
+            sub_title = sub.match(md_rule['title_filter2'])
+            if (sub_title != null)
+                sub_btn.append(
+                    $('<li></li>').append(
+                        $('<a></a>')
+                            .attr('href', '#sub-btn-' + sub_title[0].slice(2, -1))
+                            .text(sub_title[0].slice(2, -1))
+                    )
+                )
+        })
+        $(nav_tag).append(
+            $('<li></li>').append(
+                $('<div></div>')
+                    .append(
+                        $('<a></a>')
+                            .attr('href', '#btn-' + btn_title)
+                            .text(btn_title)
+                    )
+                    .append(sub_btn)
+            )
+        )
+    }
+
     var tab_handler = {
-        '團隊介紹': (contents) => { content_render(contents, '#content-team') },
+        '團隊介紹': (contents) => {
+            navigator_generator('#navigator-container', contents)
+            content_render(contents, '#content-team')
+        },
         '各組介紹': (contents) => {
             sections = contents.split(md_rule['section'])
             // headers
@@ -66,10 +100,22 @@ var md = window.markdownit();
             // administration
 
         },
-        '活動': function (contents) { article_parser(contents, '#activities-intro', '#activities-articles') },
-        '專案計畫': function (contents) { article_parser(contents, '#projects-intro', '#projects-articles') },
-        '歷屆作品/商品': (contents) => { article_parser(contents, '#products-intro', '#products-articles') },
-        '聯絡我們': (contents) => content_render(contents, '#content-contact')
+        '活動': function (contents) {
+            navigator_generator('#navigator-container', contents)
+            article_parser(contents, '#activities-intro', '#activities-articles')
+        },
+        '專案計畫': function (contents) {
+            navigator_generator('#navigator-container', contents)
+            article_parser(contents, '#projects-intro', '#projects-articles')
+        },
+        '歷屆作品/商品': (contents) => {
+            navigator_generator('#navigator-container', contents)
+            article_parser(contents, '#products-intro', '#products-articles')
+        },
+        '聯絡我們': (contents) => {
+            navigator_generator('#navigator-container', contents)
+            content_render(contents, '#content-contact')
+        }
     }
 
     $.get('./data/content.md', function (data) {
