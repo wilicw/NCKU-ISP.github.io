@@ -108,6 +108,7 @@ var md = window.markdownit();
     }
 
     var tab_handler = {
+        'NCKU': (contents) => { },
         '團隊介紹': (contents) => {
             $('#page-team').attr('id', get_page_id(contents))
             navigator_generator('#navigator-container', contents)
