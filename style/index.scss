@@ -9,8 +9,50 @@ section {
     }
 }
 
+nav{
+    position: fixed;
+    top: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+    .top-view{
+        .navigator{
+            width: 50%;
+        }
+    }
+
+    section {
+        div{
+            width: 80%;
+        }
+    }
+
+    .main-content{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .top-view{
+        .navigator{
+            width: 100%;
+            padding-top: 10px;
+        }
+    }
+
+    section {
+        div{
+            width: 90%;
+        }
+    }
+
+    .main-content{
+        margin-top: 140px;
+    }
+}
+
 .top-view{
-    position: relative;
+    //position: relative;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -22,16 +64,15 @@ section {
         margin: auto;
     }
 
-    ul {
-        display: flex;
-        flex-flow: row wrap;
-        list-style-type: none;
+    img{
+        position: absolute;
+        height: 75px;
+        top: 5px;
     }
 
-    img{
-        height: 80px;
-        position: relative;
-        top: 0;
+    img + div{
+        margin-left: 100px;
+        margin-top: 10px;
     }
 
     .header{
@@ -39,34 +80,58 @@ section {
     }
 
     .navigator{
-        width: 50%;
+        //width: 50%;
+
+        a, a:hover, a:visited{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            list-style-type: none;
+
+            li {
+                position: relative;
+                width: 20%;
+                div{
+                    display: block;
+                    width: 200px;
+                }
+                ul{
+                    display: none;
+                    position: relative;
+                    list-style-type: none;
+                    left: -40px;
+                    width: 500px;
+                    //list-style-type: circle;
+
+                    li{
+                        border-style: none;
+                        width: fit-content;
+                    }
+                    li:hover{
+                        //border-style: solid;
+                        //border-width: 1px;
+                        background-color: #202020;
+                    }
+                }
+            }
+            li:hover{
+                a{
+                    //border-bottom-style: solid;
+                    //border-width: 1px;
+                }
+                ul{
+                    display: block;
+                }
+            }
+        }
     }
 
     div, img {
         display: inline-block;
-    }
-
-    li {
-        width: 20%;
-        div{
-            display: block;
-            width: 160px;
-        }
-        ul{
-            display: none;
-        }
-        li{
-            display: block;
-        }
-    }
-    li:hover{
-        span{
-            border-bottom-style: solid;
-            border-width: 1px;
-        }
-        ul{
-            display: block;
-        }
     }
 }
 
@@ -74,5 +139,61 @@ footer{
     p{
         text-align: center;
         margin: 0;
+    }
+}
+
+.tab-button-container{
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #393939;
+
+    display: flex;
+    justify-content: space-between;
+
+    button{
+        width: fit-content;
+        margin:5px 10px 0 10px;
+        padding: 5px;
+        border-width: 0;
+        border-radius: 10px 10px 0 0;
+        background-color: #C4C4C4;
+        color:#393939;
+    }
+
+    button:hover{
+        background-color: #393939;
+        color:#C4C4C4;
+    }
+
+    .active{
+        border-style: solid;
+        border-width: 2px 2px 0 2px;
+        border-color: #393939;
+    }
+}
+
+.md-container{
+    animation: fadeEffect 1s;
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.main-content{
+    h1{
+        text-align:center;
+    }
+
+    code{
+        color: darkslategrey;
     }
 }
