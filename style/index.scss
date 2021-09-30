@@ -9,8 +9,50 @@ section {
     }
 }
 
+nav{
+    position: fixed;
+    top: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+    .top-view{
+        .navigator{
+            width: 50%;
+        }
+    }
+
+    section {
+        div{
+            width: 80%;
+        }
+    }
+
+    .main-content{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .top-view{
+        .navigator{
+            width: 100%;
+            padding-top: 10px;
+        }
+    }
+
+    section {
+        div{
+            width: 90%;
+        }
+    }
+
+    .main-content{
+        margin-top: 140px;
+    }
+}
+
 .top-view{
-    position: relative;
+    //position: relative;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -23,9 +65,14 @@ section {
     }
 
     img{
-        height: 80px;
-        position: relative;
-        top: 0;
+        position: absolute;
+        height: 75px;
+        top: 5px;
+    }
+
+    img + div{
+        margin-left: 100px;
+        margin-top: 10px;
     }
 
     .header{
@@ -33,7 +80,7 @@ section {
     }
 
     .navigator{
-        width: 50%;
+        //width: 50%;
 
         a, a:hover, a:visited{
             color: #FFFFFF;
@@ -55,22 +102,26 @@ section {
                 ul{
                     display: none;
                     position: relative;
-                    list-style-type: circle;
+                    list-style-type: none;
+                    left: -40px;
+                    width: 500px;
+                    //list-style-type: circle;
 
                     li{
                         border-style: none;
                         width: fit-content;
                     }
                     li:hover{
-                        border-style: solid;
-                        border-width: 1px;
+                        //border-style: solid;
+                        //border-width: 1px;
+                        background-color: #202020;
                     }
                 }
             }
             li:hover{
                 a{
-                    border-bottom-style: solid;
-                    border-width: 1px;
+                    //border-bottom-style: solid;
+                    //border-width: 1px;
                 }
                 ul{
                     display: block;
@@ -134,5 +185,15 @@ footer{
     img{
         max-width: 100%;
         height: auto;
+    }
+}
+
+.main-content{
+    h1{
+        text-align:center;
+    }
+
+    code{
+        color: darkslategrey;
     }
 }

@@ -7,8 +7,39 @@ section div {
   margin: auto;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+  .top-view .navigator {
+    width: 50%;
+  }
+
+  section div {
+    width: 80%;
+  }
+
+  .main-content {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .top-view .navigator {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  section div {
+    width: 90%;
+  }
+
+  .main-content {
+    margin-top: 140px;
+  }
+}
 .top-view {
-  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,15 +56,16 @@ section div {
   margin: auto;
 }
 .top-view img {
-  height: 80px;
-  position: relative;
-  top: 0;
+  position: absolute;
+  height: 75px;
+  top: 5px;
+}
+.top-view img + div {
+  margin-left: 100px;
+  margin-top: 10px;
 }
 .top-view .header {
   width: 30%;
-}
-.top-view .navigator {
-  width: 50%;
 }
 .top-view .navigator a, .top-view .navigator a:hover, .top-view .navigator a:visited {
   color: #FFFFFF;
@@ -60,7 +92,9 @@ section div {
 .top-view .navigator ul li ul {
   display: none;
   position: relative;
-  list-style-type: circle;
+  list-style-type: none;
+  left: -40px;
+  width: 500px;
 }
 .top-view .navigator ul li ul li {
   border-style: none;
@@ -69,12 +103,7 @@ section div {
   width: fit-content;
 }
 .top-view .navigator ul li ul li:hover {
-  border-style: solid;
-  border-width: 1px;
-}
-.top-view .navigator ul li:hover a {
-  border-bottom-style: solid;
-  border-width: 1px;
+  background-color: #202020;
 }
 .top-view .navigator ul li:hover ul {
   display: block;
@@ -143,4 +172,11 @@ footer p {
 .md-container img {
   max-width: 100%;
   height: auto;
+}
+
+.main-content h1 {
+  text-align: center;
+}
+.main-content code {
+  color: darkslategrey;
 }
