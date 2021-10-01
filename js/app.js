@@ -1,14 +1,17 @@
 var md = window.markdownit();
 
 (function () {
+    /* Regular expression, please see here for more info
+     * https://docs.microsoft.com/zh-tw/dotnet/api/system.text.regularexpressions.regex?view=net-5.0
+     */
     const md_rule = {
-        'tab': /\n---\r\n/,
-        'section': /----\r\n/,
+        'tab': /[\r\n]---[\r\n]/,
+        'section': /[\r\n]----[\r\n]/,
         'identifier1': /#\s\S+\s/,
         'identifier2': /##\s\S+\s/,
         'identifier3': /###\s\S+\s/,
-        'title_filter1': /#\s\S+\r\n/,
-        'title_filter2': /##\s.+\r\n/,
+        'title_filter1': /#\s\S+/,
+        'title_filter2': /##\s.+/,
     }
 
     function set_tab_display(intro_tag, content_tag, id) {
