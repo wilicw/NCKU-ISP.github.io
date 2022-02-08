@@ -108,6 +108,50 @@
                 <div v-html="cont.html"></div>
               </v-card>
             </v-container>
+            <v-footer
+              id="聯絡方式"
+              dark
+              padless
+              class="pb-10"
+            >
+              <v-card
+                flat
+                width="100%"
+                class="transparent white--text text-center"
+              >
+                <v-card-text>
+
+                  <p class="my-10 mx-4 white--text subtitle-1">聯絡方式</p>
+
+                  <v-btn
+                    v-for="info in contact_info"
+                    :key="info.text"
+                    class="mx-4 white--text"
+                    icon
+                  >
+                    <a 
+                      :href="info.url"
+                      target="_blank"
+                      class="white--text text-decoration-none"
+                    >
+                      <v-icon size="1.7em">
+                        mdi-{{ info.text }}
+                      </v-icon>
+                    </a>
+                  </v-btn>
+                </v-card-text>
+
+                <br>
+
+                <v-card-text class="white--text pt-0">
+                  <p v-for="addr in addresses" :key="addr">{{ addr }}</p>
+                </v-card-text>
+
+                <v-card-text class="grey--text lighten-1">
+                  © {{ new Date().getFullYear() }} {{ title.en_short }}
+                </v-card-text>
+              </v-card>
+            </v-footer>
         </v-main>
       </v-app>
     </div>

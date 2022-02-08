@@ -28,6 +28,8 @@ const app = new Vue({
       en: "NCKU Institute of Space Propulsion",
       en_short: "NCKU ISP",
     },
+    addresses: [],
+    contact_info: [],
     logo: "ISP_logo.svg",
     groups: {},
     main_content: []
@@ -67,22 +69,28 @@ const app = new Vue({
             })
 
           } else {
-            self.main_content.push({
-              id: `_${Math.floor(Math.random() * 100)}`,
-              html: md.render(sub)
-            })
-
-            const addresses = [...sub.matchAll(md_rule.list)].flat()
-            const links = [...sub.matchAll(md_rule.link)].flat()
-
-            addresses.forEach(i => {
-            })
-
-            links.forEach(ll => {
-              const text = ll.match(md_rule.link_text).pop().slice(1, -1);
-              const url = ll.match(md_rule.link_url).pop().slice(1, -1);
-            })
-
+            if (sub.includes("聯絡方式")) {
+              const addresses = [...sub.matchAll(md_rule.list)].flat()
+              const links = [...sub.matchAll(md_rule.link)].flat()
+  
+              addresses.forEach(i => {
+                self.addresses.push(i.slice(2).trim())
+              })
+  
+              links.forEach(ll => {
+                const text = ll.match(md_rule.link_text).pop().slice(1, -1);
+                const url = ll.match(md_rule.link_url).pop().slice(1, -1);
+                self.contact_info.push({
+                  text: text,
+                  url: url
+                });
+              })
+            } else {
+              self.main_content.push({
+                id: `_${Math.floor(Math.random() * 100)}`,
+                html: md.render(sub)
+              })
+            }
           }
         });
 
