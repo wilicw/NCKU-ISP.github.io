@@ -1,72 +1,165 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
-<head>
+  <head>
     <title>NCKU ISP</title>
-    <meta name="Author" content="Yen Cheng Chu and ">
-    <meta http-equiv="imagetoolbar" content="no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href="style/index.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="style/app.css" rel="stylesheet" />
+    <link
+          href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css"
+          rel="stylesheet" />
+    <link
+          href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+          rel="stylesheet" />
+    <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  </head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.min.js"
-        integrity="sha512-cTQeM/op796Fp1ZUxfech8gSMLT/HvrXMkRGdGZGQnbwuq/obG0UtcL04eByVa99qJik7WlnlQOr5/Fw5B36aw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.2.0/markdown-it.js"
-        integrity="sha512-ivJskyHEWoa1WrFlVDWM7o8I7ZKt2dF97kUVMKHT4CPSWxZ7VHuCydjiED3pjOpN0WuT2XA3pK4HrZYNsZ4OqA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script-->
-</head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-app-bar app dark>
+          <div class="d-flex align-center ml-3 noselect logo-title" @click="go('main')">
+            <v-img
+                   alt="Logo"
+                   class="shrink mr-3"
+                   contain
+                   :src="logo"
+                   transition="scale-transition"
+                   width="2em"></v-img>
+            <p class="my-0 py-0 my-3 hover font-weight-medium">
+              <span>{{ title.zh }}</span>
+              <br />
+              <span class="font-italic">{{ $vuetify.breakpoint.mobile ? title.en_short : title.en }}</span>
+            </p>
+          </div>
+          <v-spacer></v-spacer>
+          <div v-if="!$vuetify.breakpoint.mobile">
+            <v-menu
+                    dark
+                    :close-on-click="closeOnClick"
+                    v-for="link in nav_link"
+                    :key="link.url"
+                    transition="slide-y-transition"
+                    offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <span
+                      class="subtitle-1 font-weight-medium mx-5"
+                      text
+                      v-bind="attrs"
+                      v-on="on">
+                  {{ link.text }}
+                </span>
+              </template>
+              <v-list v-if="link.children.length">
+                <v-list-item v-for="sub_link in link.children" :key="sub_link.text">
+                  <v-list-item-title class="hover" @click="go(sub_link.link)">{{ sub_link.text }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </div>
+          <v-app-bar-nav-icon
+                              v-if="$vuetify.breakpoint.mobile"
+                              class="mx-1"
+                              @click.stop="menu_drawer = !menu_drawer">
+          </v-app-bar-nav-icon>
+        </v-app-bar>
+        <v-navigation-drawer
+                             dark
+                             v-model="menu_drawer"
+                             right
+                             fixed
+                             temporary
+                             v-if="$vuetify.breakpoint.mobile && menu_drawer">
+          <v-list dense>
+            <v-list-group
+                          v-for="link in nav_link"
+                          :key="link.link"
+                          v-if="link.children.length">
+              <template v-slot:activator>
+                <v-list-item-content>
+                  <v-list-item-title>{{ link.text }}</v-list-item-title>
+                </v-list-item-content>
+              </template>
+              <v-list-item v-for="sub_link in link.children" :key="sub_link.text" link>
+                <v-list-item-title
+                                   @click="menu_drawer = false;go(sub_link.link)">
+                  {{sub_link.text}}
+                </v-list-item-title>
+              </v-list-item>
+            </v-list-group>
+            <v-list-item
+                         v-if="!link.children.length"
+                         v-for="link in nav_link"
+                         :key="link.url"
+                         link>
+              <v-list-item-content
+                                   class="mt-1"
+                                   @click="menu_drawer = false;go(link.link)">
+                <v-list-item-title class="py-1">{{ link.text }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-navigation-drawer>
+        <v-main id="main" class="overflow-y-auto">
+            <v-container>
+              <v-card v-for="cont in main_content" :key="cont.id" :id="cont.id" flat class="mt-10">
+                <div v-html="cont.html"></div>
+              </v-card>
+            </v-container>
+            <v-footer
+              id="聯絡方式"
+              dark
+              padless
+              class="pb-10"
+            >
+              <v-card
+                flat
+                width="100%"
+                class="transparent white--text text-center"
+              >
+                <v-card-text>
 
-<body>
-    <header>
-    </header>
+                  <p class="my-10 mx-4 white--text subtitle-1">聯絡方式</p>
 
-    <!-- Navigator -->
-    <nav class="top-view">
-        <div>
-            <img src="./ISP_logo.svg">
+                  <v-btn
+                    v-for="info in contact_info"
+                    :key="info.text"
+                    class="mx-4 white--text"
+                    icon
+                  >
+                    <a 
+                      :href="info.url"
+                      target="_blank"
+                      class="white--text text-decoration-none"
+                    >
+                      <v-icon size="1.7em">
+                        mdi-{{ info.text }}
+                      </v-icon>
+                    </a>
+                  </v-btn>
+                </v-card-text>
 
-            <div>
-                <h3>成大太空推進研究社</h3>
-                <span>Institute of Space Propulsion</span>
-            </div>
+                <br>
 
-            <div class="navigator">
-                <ul id="navigator-container">
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class='main-content'>
-        <!-- Main -->
-        <section id="page-team">
-            <div id="content-team">
-            </div>
-        </section>
-        <section id="page-activities">
-            <div id="activities-intro"></div>
-            <div id="activities-articles"></div>
-        </section>
-        <section id="page-projects">
-            <div id="projects-intro"></div>
-            <div id="projects-articles"></div>
-        </section>
-        <section id="page-products">
-            <div id="products-intro"></div>
-            <div id="products-articles"></div>
-        </section>
-        <section id="page-contact">
-            <div id="content-contact">
-            </div>
-        </section>
+                <v-card-text class="white--text pt-0">
+                  <p v-for="addr in addresses" :key="addr">{{ addr }}</p>
+                </v-card-text>
+
+                <v-card-text class="grey--text lighten-1">
+                  © {{ new Date().getFullYear() }} {{ title.en_short }}
+                </v-card-text>
+              </v-card>
+            </v-footer>
+        </v-main>
+      </v-app>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.3.2/dist/markdown-it.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 
-    <!-- Footer -->
-    <footer>
-        <p>701 臺南市東區大學路一號</p>
-        <p>成功大學光復校區 學生活動中心四樓</p>
-        <p>aerogroup2020@gmail.com</p>
-    </footer>
-    <script src="./js/app.js"></script>
-</body>
+</html>
