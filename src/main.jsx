@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 import App from './App';
 import Home from './routers/Home';
+import About from './routers/About';
+import Mission from './routers/Mission';
+import Projects from './routers/Projects';
+import Teams from './routers/Teams';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +23,19 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <div>about</div>,
+        element: <About />,
+      },
+      {
+        path: "mission",
+        element: <Mission />,
+      },
+      {
+        path: "projects",
+        element: <Projects />,
+      },
+      {
+        path: "teams",
+        element: <Teams />,
       },
     ]
   },
