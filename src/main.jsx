@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         element: <Projects />,
       },
       {
-        path: "teams",
+        path: "team",
         element: <Teams />,
       },
     ]
@@ -43,6 +43,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router} fallbackElement={123} />
   </React.StrictMode>
 );
