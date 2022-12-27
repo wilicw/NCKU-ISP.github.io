@@ -11,6 +11,7 @@ import About from './routers/About';
 import Mission from './routers/Mission';
 import Projects from './routers/Projects';
 import Teams from './routers/Teams';
+import Splash from './routers/projects/Splash/Splash';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
         path: "team",
         element: <Teams />,
       },
+      /* Projects Route */
+      {
+        path: "projects/splash",
+        element: <Splash />
+      }
     ]
   },
 ]);
