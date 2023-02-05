@@ -23,10 +23,10 @@ function Projects() {
           {
             projects_list.filter((p) => filter == p.teams).map((p, i) =>
               <Link
-                className={`flex gap-10 items-center rounded-xl p-5 hover:outline outline-2 ${(i % 2) && 'flex-row-reverse'}`}
+                className={`flex gap-10 items-center rounded-xl p-5 hover:outline outline-2 ${true && 'flex-row-reverse'}`}
                 to={p.url}
               >
-                <img src={p.cover} className="h-20" alt="" />
+                {/* <img src={p.cover} className="h-20" alt="" /> */}
                 <div>
                   <div className='text-left text-3xl font-semibold grow italic my-2'>{p.name}</div>
                   <p className="text-left hidden md:block">{p.description}</p>
