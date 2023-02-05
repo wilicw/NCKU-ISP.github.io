@@ -15,8 +15,9 @@ function Home() {
         </div>
       </div>
       <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10' style={{ color: "#383838" }}>
-        <p className='text-2xl font-bold'>合作夥伴</p>
-        <div className='flex items-center'>
+        <p className='text-2xl font-bold pb-2'>合作夥伴</p>
+        <hr className="border-blue-300 w-10 border-b-2" />
+        <div className='flex items-center pt-3'>
           <br />
           <br />
           <br />
