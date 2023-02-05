@@ -72,6 +72,7 @@ function App() {
       </div>
       <div className='p-5'>
         <Outlet />
+        <p className="text-center pt-10 pb-5">© { new Date().getFullYear() } NCKU ISP</p>
       </div>
     </>
   );
