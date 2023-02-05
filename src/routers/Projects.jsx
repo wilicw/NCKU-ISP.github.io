@@ -35,7 +35,7 @@ function Projects() {
                           <i className="inline-block gg-play-button"></i>
                           {p.name}
                         </div>
-                        <p className="text-left hidden md:block">{p.description}</p>
+                        <p className="text-left">{p.description}</p>
                       </div>
                     </a>
                     :
@@ -49,7 +49,7 @@ function Projects() {
                           <i className="inline-block gg-play-button"></i>
                           {p.name}
                         </div>
-                        <p className="text-left hidden md:block">{p.description}</p>
+                        <p className="text-left">{p.description}</p>
                       </div>
                     </Link>
                 }
