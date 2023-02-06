@@ -2,9 +2,9 @@ function Teams() {
   return (
     <>
       <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 mb-10' style={{ color: "#383838" }}>
-        <p className='text-3xl font-bold pb-2'>團隊專業</p>
-        <hr className="border-blue-300 w-10 border-b-2" />
-        <p className="pt-3">
+        <p className='text-3xl font-bold pb-3'>團隊專業</p>
+        <hr className="border-sky-400 rounded-sm w-10 border-b-2" />
+        <p className="pt-5">
           ISP 是由三個主要的學術部門組成：航電組、推進組、結構組。學術部有別於行政部門，是專門處理學術研究上的各種大小事。大至規劃研究方向，小至輔導學員學習。目的是幫助社團中的各項學術部門建立完善的組織及秩序。
           <br /><br />
           <li>負責提出及審核各項學術研究計畫</li>
@@ -15,9 +15,9 @@ function Teams() {
       </div>
 
       <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
-        <p className='text-2xl font-bold pb-2'>Structure 結構組</p>
-        <hr className="border-blue-300 w-10 border-b-2" />
-        <p className="text-gray-600 font-bold py-3">
+        <p className='text-2xl font-bold pb-3'>Structure 結構組</p>
+        <hr className="border-sky-400 rounded-sm w-10 border-b-2" />
+        <p className="text-gray-600 font-bold py-5">
           <i className="gg-quote inline-block"></i>
           結構次系統的任務就是打造火箭
           <i className="gg-quote inline-block"></i>
@@ -40,9 +40,9 @@ function Teams() {
       </div>
 
       <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
-        <p className='text-2xl font-bold pb-2'>Avionics 航電組</p>
-        <hr className="border-blue-300 w-10 border-b-2" />
-        <p className="text-gray-600 font-bold py-3">
+        <p className='text-2xl font-bold pb-3'>Avionics 航電組</p>
+        <hr className="border-sky-400 rounded-sm w-10 border-b-2" />
+        <p className="text-gray-600 font-bold py-5">
           <i className="gg-quote inline-block"></i>
           航電系統相當於火箭的大腦及感官
           <i className="gg-quote inline-block"></i>
@@ -62,9 +62,9 @@ function Teams() {
       </div>
 
       <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
-        <p className='text-2xl font-bold pb-2'>Propulsion 推進組</p>
-        <hr className="border-blue-300 w-10 border-b-2" />
-        <p className="text-gray-600 font-bold py-3">
+        <p className='text-2xl font-bold pb-3'>Propulsion 推進組</p>
+        <hr className="border-sky-400 rounded-sm w-10 border-b-2" />
+        <p className="text-gray-600 font-bold py-5">
           <i className="gg-quote inline-block"></i>
           火箭的動力來源無疑就是發動機了
           <i className="gg-quote inline-block"></i>
