@@ -33,8 +33,9 @@ function App() {
           </Link>
           <div className='mr-0 ml-auto hidden lg:block xl:block 2xl:block'>
             {NavItemData.map(item => <NavItem text={item.text} url={item.url} />)}
+            <a href="https://archive.nckuisp.space" className="font-bold mx-3 inline">Old Website</a>
             <a
-              className="mx-3 p-2 rounded-md inline bg-sky-500 hover:bg-sky-600 shadow-md shadow-slate-800"
+              className="mx-3 p-2 rounded-md inline bg-sky-500 hover:bg-sky-600 shadow-md hover:shadow-slate-800"
               href="https://donate2.ncku.edu.tw/index.php?c=donate&m=step1&usename=%E5%A4%AA%E7%A9%BA%E6%8E%A8%E9%80%B2%E7%A0%94%E7%A9%B6%E7%A4%BE&usetype=ut9"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,6 +59,7 @@ function App() {
                   {item.text}
                 </Link>
               ))}
+              <a href="https://archive.nckuisp.space" className="block mx-auto py-2 font-medium">Old Website</a>
               <a
                 className="p-2 rounded-md block font-black"
                 href="https://donate2.ncku.edu.tw/index.php?c=donate&m=step1&usename=%E5%A4%AA%E7%A9%BA%E6%8E%A8%E9%80%B2%E7%A0%94%E7%A9%B6%E7%A4%BE&usetype=ut9"
@@ -84,13 +86,12 @@ function App() {
             <a href="mailto:aerogroup2020@gmail.com" target="_blank"><i className="gg-mail"></i></a>
           </div>
           <p className='py-1'>701401 臺南市東區大學路一號</p>
-          <p className='py-1'>國立成功大學 光復校區 學生活動中心4樓</p>
-          <div className='mx-auto flex gap-5 justify-center items-center text-xs text-gray-600 pt-8'>
-            <a href="https://archive.nckuisp.space/" target="_blank">舊版網頁</a>
-            <a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank">Open Source License</a>
+          <p className='py-1'>國立成功大學 光復校區 學生活動中心 4 樓</p>
+          <div className='mx-auto flex gap-5 justify-center items-center text-sm text-gray-600 pt-8'>
+            <a href="#" target="_blank">&copy; {new Date().getFullYear()} NCKU ISP</a>
+            {/* <a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank">Open Source License</a> */}
           </div>
         </div>
-        <p className="text-center pt-10 pb-5">&copy; {new Date().getFullYear()} NCKU ISP</p>
       </div>
     </>
   );
