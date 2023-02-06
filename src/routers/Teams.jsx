@@ -1,7 +1,7 @@
 function Teams() {
   return (
     <>
-      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10' style={{ color: "#383838" }}>
+      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 mb-10' style={{ color: "#383838" }}>
         <p className='text-3xl font-bold pb-2'>團隊專業</p>
         <hr className="border-blue-300 w-10 border-b-2" />
         <p className="pt-3">
@@ -14,7 +14,7 @@ function Teams() {
         </p>
       </div>
 
-      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10' style={{ color: "#383838" }}>
+      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
         <p className='text-2xl font-bold pb-2'>Structure 結構組</p>
         <hr className="border-blue-300 w-10 border-b-2" />
         <p className="text-gray-600 font-bold py-3">
@@ -23,7 +23,7 @@ function Teams() {
           <i className="gg-quote inline-block"></i>
         </p>
         <div className="flex gap-5 flex-wrap items-center">
-          <img src="https://i.imgur.com/cSczrXA.png" className="block rounded-xl" alt="" />
+          <img src="https://i.imgur.com/cSczrXA.png" className="block rounded-xl shadow-md" alt="" />
           <p className="block">
             如果沒有結構次系統，不只是火箭，大至船艦、坦克、各種建築物，小至電腦、手機、各種 3C 產品都造不出來，整個文明社會都不會存在。這樣知道結構組的重要了嗎？
             <br />
@@ -31,7 +31,7 @@ function Teams() {
             ISP 結構組的工作內容包含：CAD 設計、FEM模擬、熱模擬以及機械加工製造，除了在電腦上的設計與模擬之外，常常也需要實際前往加工，有時也會自行製作。因此除了應用課本上的知識分析，也將累積大量實作經驗或是業界經驗。
             <br />
             <br />
-            我們常用的軟體包括：SOLIDWORKS, Autodesk Inventor, ANSYS 及 OpenRocket。
+            我們常用的軟體包括：SolidWorks, Autodesk Inventor, ANSYS, OpenRocket。
             <br />
             <br />
             我們也鼓勵組員們發揮創意，除了 ISP 火箭全箭的設計工作外，目前結構組進行中的專案有立方衛星彈射艙、火箭控制、通用型航電艙設計等等。
@@ -39,7 +39,7 @@ function Teams() {
         </div>
       </div>
 
-      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10' style={{ color: "#383838" }}>
+      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
         <p className='text-2xl font-bold pb-2'>Avionics 航電組</p>
         <hr className="border-blue-300 w-10 border-b-2" />
         <p className="text-gray-600 font-bold py-3">
@@ -48,7 +48,7 @@ function Teams() {
           <i className="gg-quote inline-block"></i>
         </p>
         <div className="flex gap-5 flex-wrap items-center">
-          <img src="https://i.imgur.com/LpOLsIk.jpg" className="block rounded-xl" alt="" />
+          <img src="https://i.imgur.com/LpOLsIk.jpg" className="block rounded-xl shadow-md" alt="" />
           <p className="block">
             航電是一個對許多人既熟悉又陌生的名詞，究竟他是一個什麼東西呢？"可控"火箭最不可少的就是航電系統，無論是導彈或是運載火箭，缺乏了計算核心就無法控制火箭的運動。航電板負責主要負責姿態估計以及開傘控制，必須在高加速度與強震動環境中維持系統正常運作，因此其穩定性及可靠性必須經過重重檢驗。
             <br />
@@ -61,7 +61,7 @@ function Teams() {
         </div>
       </div>
 
-      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10' style={{ color: "#383838" }}>
+      <div className='bg-zinc-100 mx-auto max-w-5xl rounded-xl p-8 my-10' style={{ color: "#383838" }}>
         <p className='text-2xl font-bold pb-2'>Propulsion 推進組</p>
         <hr className="border-blue-300 w-10 border-b-2" />
         <p className="text-gray-600 font-bold py-3">
@@ -70,7 +70,7 @@ function Teams() {
           <i className="gg-quote inline-block"></i>
         </p>
         <div className="flex gap-5 flex-wrap items-center">
-          <img src="https://i.imgur.com/g1KiDx9.jpg" className="block rounded-xl" alt="" />
+          <img src="https://i.imgur.com/g1KiDx9.jpg" className="block rounded-xl shadow-md" alt="" />
           <p className="block">
             推進組的主要工作就是製作出發動機，以提供火箭足夠的動力。
             <br />
