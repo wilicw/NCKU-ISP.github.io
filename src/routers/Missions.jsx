@@ -1,7 +1,7 @@
 import { missions, mission_classifications } from "../pages_data";
 import CountUp from 'react-countup';
 
-function Mission() {
+function Missions() {
   return (
     <>
       <div className="container mx-auto max-w-3xl">
@@ -41,4 +41,4 @@ function Mission() {
   );
 }
 
-export default Mission;
+export default Missions;
