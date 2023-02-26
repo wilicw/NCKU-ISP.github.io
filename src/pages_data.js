@@ -248,7 +248,7 @@ const missions = [
       "遠端點火系統",
       "簡易地面站運作",
       "開傘機構穩定性",
-      "降落傘能"
+      "降落傘"
     ],
     classification: mission_classifications[0],
   },
