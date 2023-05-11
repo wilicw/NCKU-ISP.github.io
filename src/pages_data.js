@@ -28,8 +28,8 @@ const projects_list = [
   {
     cover: null,
     url: 'https://hackmd.io/@ispcompetition/FARproposal',
-    name: '2023 FAR-51025',
-    description: '這項比賽是由 Friend of Amateur Rocketry 機構所舉辦的年度業餘火箭大賽。我們的目標是拿下 10000 英尺（約3公里）組的冠軍。並且火箭中的固態發動機、航電系統、立方衛星酬載、箭體本身都是由我們獨立研發建造。',
+    name: 'Project WINDBREAK',
+    description: 'ISP 將於 2023 年參加美國的 FAR 51025 競賽，這項比賽是由 Friend of Amateur Rocketry 機構所舉辦的年度業餘火箭大賽。我們的目標是拿下 10000 英尺（約3公里）組的冠軍。並且火箭中的固態發動機、航電系統、立方衛星酬載、箭體本身都是由我們獨立研發建造。',
     teams: null
   },
   {
