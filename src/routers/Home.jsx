@@ -1,6 +1,24 @@
 import "./Home.css";
 import logo_CPL from "../logos/CPL.gif";
+import logo_NCKU from "../logos/ncku.jpg";
+import logo_NCKUIAA from "../logos/nckuiaa.png";
+import logo_epotech from "../logos/epotech.jpg";
+import logo_cmsteel from "../logos/cmsteel.png";
+import logo_ohmplus from "../logos/ohmplus.jpg";
 import logo_HackMD from "../logos/HackMD.svg";
+import logo_nckues from "../logos/nckues.png";
+import logo_epolab from "../logos/epolab.jpg";
+import logo_tanko from "../logos/tanko.jpg";
+
+function Logo({ url, label, logo_image }) {
+  return <a
+    className="p-0 md:w-1/5 w-48 block m-auto"
+    href={url}
+    target="_blank"
+  >
+    <img src={logo_image} title={label} />
+  </a>;
+}
 
 function Home() {
   return (
@@ -34,28 +52,28 @@ function Home() {
         </div>
       </div>
       <div
-        className="bg-zinc-100 mx-auto max-w-5xl rounded-xl p-10 my-10"
+        className="bg-white mx-auto max-w-5xl rounded-xl p-10 my-10"
         style={{ color: "#383838" }}
       >
-        <p className="text-2xl font-bold pb-3">合作夥伴</p>
+        <p className="text-2xl pb-3 font-bold">指導單位</p>
         <hr className="border-sky-400 w-10 border-b-2 rounded-sm" />
-        <div className="flex items-center pt-5 gap-5">
-          <a
-            className="grayscale hover:grayscale-0 md:opacity-50 md:hover:opacity-100 m-0 p-0 md:w-1/6 w-1/2"
-            href="https://sites.google.com/gs.ncku.edu.tw/yungscpl"
-            target="_blank"
-          >
-            <img src={logo_CPL} title="國立成功大學燃燒與推進實驗室" />
-          </a>
-
-          <a
-            className="grayscale hover:grayscale-0 md:opacity-50 md:hover:opacity-100 m-0 p-0 md:w-1/6 w-1/2"
-            href="https://hackmd.io/"
-            target="_blank"
-          >
-            <img src={logo_HackMD} title="HackMD" />
-          </a>
+        <div className="flex items-center pt-5 pb-10 gap-5 flex-wrap">
+          <Logo url="https://sites.google.com/gs.ncku.edu.tw/yungscpl" logo_image={logo_CPL} label="國立成功大學燃燒與推進實驗室" />
+          <Logo url="https://web.ncku.edu.tw/" logo_image={logo_NCKU} label="國立成功大學" />
+          <Logo url="https://iaa.ncku.edu.tw/" logo_image={logo_NCKUIAA} label="國立成功大學航空太空工程學系" />
         </div>
+        <p className="text-2xl pb-3 font-bold">合作夥伴</p>
+        <hr className="border-sky-400 w-10 border-b-2 rounded-sm" />
+        <div className="flex items-center pt-5 gap-5 flex-wrap">
+          <Logo url="http://www.epotechcorp.com/" logo_image={logo_epotech} label="莘茂複合材料股份有限公司" />
+          <Logo url="https://hackmd.io/" logo_image={logo_HackMD} label="HackMD" />
+          <Logo url="https://www.cmsteel.com.tw/" logo_image={logo_cmsteel} label="澄茂企業股份有限公司" />
+          <Logo url="http://fund.es.ncku.edu.tw/esfd/" logo_image={logo_nckues} label="國立成功大學工程科學文教基金會" />
+          <Logo url="https://www.epolab.com/" logo_image={logo_epolab} label="大格化學工業股份有限公司" />
+          <Logo url="https://www.tanko.com.tw/" logo_image={logo_tanko} label="天鋼事業股份有限公司" />
+        </div>
+        <br />
+        <p className="text-xs font-bold text-gray-400 text-right">*此清單依據合作時間排序</p>
       </div>
     </>
   );
